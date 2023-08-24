@@ -116,8 +116,7 @@
                     {% for post in post_items %}
                     <article class="post">
                         <div class="post__header">
-                            
-                                <div class="post__profile">
+                             <div class="post__profile">
                                     {% if post.user.profile.image %}
                                     <a href="{{post.user.profile.image.url}}" class="post__avatar">
                                         
@@ -140,9 +139,9 @@
 
                         <div class="post__content">
                             <div class="post__medias">
-                                <a href="{% url 'post-details' post.id %}"><img class="post__media" src="{{ post.picture.url }}" alt="Post Content" style="width: 700px; height: 348px; object-fit: cover;"></a>
-<!--                                <img class="post__media" src="{% static 'assets1/insta-clone.png' %}" alt="Post Content">-->
-<!--                                <img class="post__media" src="{% static 'assets1/insta-clone.png' %}" alt="Post Content">-->
+                               <a href="{% url 'post-details' post.id %}"><img class="post__media" src="{{ post.picture.url }}" alt="Post Content" style="width: 700px; height: 348px; object-fit: cover;"></a> 
+                              {% comment %} <img class="post__media" src="{% static 'assets1/insta-clone.png' %}" alt="Post Content"> 
+                               <img class="post__media" src="{% static 'assets1/insta-clone.png' %}" alt="Post Content"> {% endcomment %}
                             </div>
                         </div>
 
@@ -177,10 +176,10 @@
                             <div class="post__infos">
                                 <div class="post__likes">
                                     <a href="#" class="post__likes-avatar">
-<!--                                        <img src="assets1/default-user.png" alt="User Picture">-->
+                                    <img src="assets1/default-user.png" alt="User Picture">
                                     </a>
 
-<!--                                    <span>Liked by <a class="post__name&#45;&#45;underline" href="#">user123</a> and <a href="#">73 others</a></span>-->
+                                    <span>Liked by <a class="post__name&#45;&#45;underline" href="#">user123</a> and <a href="#">73 others</a></span>
                                     <span>{{post.likes}} <a class="post__name--underline" href="#">likes</a> <a href="#"></a></span>
                                 </div>
 
@@ -276,9 +275,9 @@
                                 </div>
 
                                 {% if follow_status == True %}
-                                <a href="{% url 'follow' user 0 %}" class="side-menu__suggestion-button">Follow</a>
+                                {% comment %} <a href="{% url 'follow' user 0 %}" class="side-menu__suggestion-button">Follow</a> {% endcomment %}
                                 {% else %}
-                                <a href="{% url 'follow' user 1 %}" class="side-menu__suggestion-button">Follow</a>
+                                {% comment %} <a href="{% url 'follow' user 1 %}" class="side-menu__suggestion-button">Follow</a> {% endcomment %}
                                 {% endif %}
                             </div>
                             {% endif %}
